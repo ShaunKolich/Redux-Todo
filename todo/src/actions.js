@@ -2,30 +2,35 @@ export const NEW_ITEM = 'NEW_ITEM';
 export const TOGGLE_COMPLETE = 'TOGGLE_COMPLETE';
 export const TOGGLE_INCOMPLETE = 'TOGGLE_INCOMPLETE';
 
-export function newItem(newItem) {
+let nextTodoId = 0;
+
+export function newItem(newItem,id) {
     return {
         type: NEW_ITEM,
         payload: {
-            newItem
+            newItem,
+            id:nextTodoId++
         }
 
     }
 }
 
-export function toggleComplete(completeItem) {
+export function toggleComplete(completeItem,id) {
     return {
         type: TOGGLE_COMPLETE,
         payload: {
-            completeItem
+            completeItem,
+            id
         }
     }
 }
 
-export function toggleIncomplete(incompleteItem) {
+export function toggleIncomplete(incompleteItem,id) {
     return {
         type: TOGGLE_INCOMPLETE,
         payload: {
-            incompleteItem
+            incompleteItem,
+            id
         }
     }
 }

@@ -27,18 +27,19 @@ class AddNew extends React.Component{
 
         this.setState({
             newItem: '',
+
         })
 
 }
 
     render() {
         const { list } = this.props;
-
+        const { newItem } = this.state;
 
 
         return (
             <div>
-                <h2>Add A Item</h2> 
+                <h2>Add Todo Item</h2> 
                 <h6>{list}</h6>   
 
                 <form onSubmit={this.submitItem}>
@@ -62,7 +63,7 @@ class AddNew extends React.Component{
 
 const mapStateToProps = (state) =>{
     return{
-        list: state.newItem
+        newItem: state.newItem
     }
 }
 
